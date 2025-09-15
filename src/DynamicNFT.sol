@@ -13,13 +13,13 @@ import "./interfaces/IMetadataRenderer.sol";
  * @dev NFT contract that changes metadata based on external data sources
  */
 contract DynamicNFT is ERC721, Ownable {
-        using Strings for uint256;
+    using Strings for uint256;
 
-        uint256 private _tokenIdCounter;
+    uint256 private _tokenIdCounter;
 
-        // Core interfaces
-            IDataOracle public weatherOracle;
-                IDataOracle public timeOracle;
+    // Core interfaces
+    IDataOracle public weatherOracle;
+    IDataOracle public timeOracle;
     IMetadataRenderer public metadataRenderer;
 
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
