@@ -6,5 +6,5 @@ pragma solidity ^0.8.19;
  * @dev Interface for data oracle contracts
  */
 interface IDataOracle {
-        function getData() external view returns (string memory);
+    function getData() external view returns (string memory);
 }
