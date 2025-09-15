@@ -18,4 +18,6 @@ contract DynamicNFT is ERC721, Ownable {
         uint256 private _tokenIdCounter;
 
         // Core interfaces
+            IDataOracle public weatherOracle;
+
 }
