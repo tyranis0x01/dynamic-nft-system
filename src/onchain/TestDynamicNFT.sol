@@ -39,13 +39,13 @@ contract TestDynamicNFT is ERC721 {
         "windy",
         "hail",
         "hurricane",
-        "Wildfire",
-        "Tornado",
-        "Sandstorm",
-        "Cyclone",
-        "Blizzard",
-        "Heatwave",
-        "Flood"
+        "wildfire",
+        "tornado",
+        "sandstorm",
+        "cyclone",
+        "blizzard",
+        "heatwave",
+        "flood"
     ];
     string[] private timeOptions =
         ["morning", "afternoon", "evening", "night", "midnight", "dusk", "aurora", "twilight"];

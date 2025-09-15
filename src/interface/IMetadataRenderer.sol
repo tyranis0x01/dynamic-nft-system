@@ -6,7 +6,7 @@ pragma solidity ^0.8.19;
  * @dev Interface Of MetadataRender, which generates dynamic metadata and SVG images for NFTs based on their state
  */
 interface IMetadataRenderer {
-        struct NFTState {
+    struct NFTState {
         uint256 lastWeatherUpdate;
         uint256 lastTimeUpdate;
         uint256 userActionCount;
@@ -16,6 +16,5 @@ interface IMetadataRenderer {
         uint256 createdAt;
     }
 
-        function renderMetadata(uint256 tokenId, NFTState memory state) external view returns (string memory);
-
+    function renderMetadata(uint256 tokenId, NFTState memory state) external view returns (string memory);
 }
