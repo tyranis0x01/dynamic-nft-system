@@ -32,7 +32,7 @@ contract DynamicNFT is ERC721, Ownable {
         address owner;
         uint256 createdAt;
     }
-    
+
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
         ERC721("Dynamic Weather NFT", "DYNFT")
         Ownable(msg.sender)
