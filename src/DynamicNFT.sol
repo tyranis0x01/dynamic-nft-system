@@ -35,7 +35,8 @@ contract DynamicNFT is ERC721, Ownable {
 
     // Storage
     mapping(uint256 => NFTState) public nftStates;
-    
+    mapping(address => uint256[]) public userTokens;
+
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
         ERC721("Dynamic Weather NFT", "DYNFT")
         Ownable(msg.sender)
