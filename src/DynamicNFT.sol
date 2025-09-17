@@ -41,7 +41,11 @@ contract DynamicNFT is ERC721, Ownable {
         event NFTMinted(uint256 indexed tokenId, address indexed owner);
     event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
     event OracleUpdated(address indexed oracle, string oracleType);
+    event UserAction(uint256 indexed tokenId, address indexed user, string action);
 
+    // Constants
+    uint256 public constant UPDATE_INTERVAL = 1 hours;
+    
     constructor(address _weatherOracle, address _timeOracle, address _metadataRenderer)
         ERC721("Dynamic Weather NFT", "DYNFT")
         Ownable(msg.sender)
