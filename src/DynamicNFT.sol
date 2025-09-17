@@ -83,6 +83,9 @@ contract DynamicNFT is ERC721, Ownable {
         return tokenId;
     }
 
+    /**
+     * @dev Update NFT based on weather data
+     */
         function updateWeather(uint256 tokenId) external {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         require(block.timestamp >= nftStates[tokenId].lastWeatherUpdate + UPDATE_INTERVAL, "Too early to update");
