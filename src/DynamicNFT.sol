@@ -100,7 +100,7 @@ contract DynamicNFT is ERC721, Ownable {
     /**
      * @dev Update NFT based on time of day
      */
-        function updateTimeOfDay(uint256 tokenId) external {
+    function updateTimeOfDay(uint256 tokenId) external {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         require(block.timestamp >= nftStates[tokenId].lastTimeUpdate + UPDATE_INTERVAL, "Too early to update");
 
@@ -114,7 +114,7 @@ contract DynamicNFT is ERC721, Ownable {
     /**
      * @dev Record user action that affects NFT
      */
-        function performUserAction(uint256 tokenId, string calldata action) external {
+    function performUserAction(uint256 tokenId, string calldata action) external {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         require(ownerOf(tokenId) == msg.sender, "Not token owner");
 
