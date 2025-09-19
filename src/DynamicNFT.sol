@@ -96,4 +96,43 @@ contract DynamicNFT is ERC721, Ownable {
 
         emit NFTUpdated(tokenId, "weather", newWeather);
     }
+
+    /**
+     * @dev Update NFT based on time of day
+     */
+    function updateTimeOfDay(uint256 tokenId) external {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+        require(block.timestamp >= nftStates[tokenId].lastTimeUpdate + UPDATE_INTERVAL, "Too early to update");
+
+        string memory newTimeOfDay = _getCurrentTimeOfDay();
+        nftStates[tokenId].currentTimeOfDay = newTimeOfDay;
+        nftStates[tokenId].lastTimeUpdate = block.timestamp;
+
+        emit NFTUpdated(tokenId, "timeOfDay", newTimeOfDay);
+    }
+
+    /**
+     * @dev Record user action that affects NFT
+     */
+    function performUserAction(uint256 tokenId, string calldata action) external {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+        require(ownerOf(tokenId) == msg.sender, "Not token owner");
+
+        nftStates[tokenId].userActionCount++;
+
+        emit UserAction(tokenId, msg.sender, action);
+        emit NFTUpdated(tokenId, "userAction", Strings.toString(nftStates[tokenId].userActionCount));
+    }
+
+    /**
+     * @dev Get current time of day based on block timestamp
+     */
+    function _getCurrentTimeOfDay() internal view returns (string memory) {
+        uint256 hour = (block.timestamp / 3600) % 24;
+
+        if (hour >= 6 && hour < 12) return "morning";
+        if (hour >= 12 && hour < 18) return "afternoon";
+        if (hour >= 18 && hour < 22) return "evening";
+        return "night";
+    }
 }
