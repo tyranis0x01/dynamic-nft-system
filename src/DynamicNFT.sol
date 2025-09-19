@@ -111,6 +111,9 @@ contract DynamicNFT is ERC721, Ownable {
         emit NFTUpdated(tokenId, "timeOfDay", newTimeOfDay);
     }
 
+    /**
+     * @dev Record user action that affects NFT
+     */
         function performUserAction(uint256 tokenId, string calldata action) external {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         require(ownerOf(tokenId) == msg.sender, "Not token owner");
