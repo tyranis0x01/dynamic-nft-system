@@ -123,4 +123,13 @@ contract DynamicNFT is ERC721, Ownable {
         emit UserAction(tokenId, msg.sender, action);
         emit NFTUpdated(tokenId, "userAction", Strings.toString(nftStates[tokenId].userActionCount));
     }
+
+    function _getCurrentTimeOfDay() internal view returns (string memory) {
+        uint256 hour = (block.timestamp / 3600) % 24;
+
+        if (hour >= 6 && hour < 12) return "morning";
+        if (hour >= 12 && hour < 18) return "afternoon";
+        if (hour >= 18 && hour < 22) return "evening";
+        return "night";
+    }
 }
