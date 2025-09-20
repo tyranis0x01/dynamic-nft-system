@@ -153,4 +153,8 @@ contract DynamicNFT is ERC721, Ownable {
         });
         return metadataRenderer.renderMetadata(tokenId, rendererState);
     }
+
+    function getTokensOfOwner(address owner) external view returns (uint256[] memory) {
+        return userTokens[owner];
+    }
 }
