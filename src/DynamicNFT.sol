@@ -139,7 +139,7 @@ contract DynamicNFT is ERC721, Ownable {
     /**
      * @dev Override tokenURI to return dynamic metadata
      */
-        function tokenURI(uint256 tokenId) public view override returns (string memory) {
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
         require(_ownerOf(tokenId) != address(0), "Token does not exist");
         NFTState memory state = nftStates[tokenId];
         IMetadataRenderer.NFTState memory rendererState = IMetadataRenderer.NFTState({
