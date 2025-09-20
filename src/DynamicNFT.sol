@@ -160,4 +160,9 @@ contract DynamicNFT is ERC721, Ownable {
     function getTokensOfOwner(address owner) external view returns (uint256[] memory) {
         return userTokens[owner];
     }
+
+    function getNFTState(uint256 tokenId) external view returns (NFTState memory) {
+        require(_ownerOf(tokenId) != address(0), "Token does not exist");
+        return nftStates[tokenId];
+    }
 }
