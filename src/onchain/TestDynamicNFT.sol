@@ -29,29 +29,10 @@ contract TestDynamicNFT is ERC721 {
     event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
 
     // Predefined weather and time options for testing
-    string[] private weatherOptions = [
-        "sunny",
-        "rainy",
-        "cloudy",
-        "snowy",
-        "foggy",
-        "stormy",
-        "windy",
-        "hail",
-        "hurricane",
-        "wildfire",
-        "tornado",
-        "sandstorm",
-        "cyclone",
-        "blizzard",
-        "heatwave",
-        "flood",
-        "tsunami",
-        "snowstorm",
-        "wildfire"
-    ];
+    string[] private weatherOptions =
+        ["sunny", "rainy", "cloudy", "snowy", "foggy"];
     string[] private timeOptions =
-        ["morning", "afternoon", "evening", "night", "midnight", "dusk", "aurora", "twilight"];
+        ["morning", "afternoon", "evening", "night"];
 
     constructor() ERC721("Simple Dynamic NFT", "SDYNFT") {}
 
