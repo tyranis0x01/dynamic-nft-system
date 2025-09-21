@@ -30,7 +30,7 @@ contract TestDynamicNFT is ERC721 {
 
     // Predefined weather and time options for testing
     string[] private weatherOptions =
-        ["sunny", "rainy", "cloudy", "snowy", "foggy"];
+        ["sunny", "rainy", "cloudy", "snowy", "foggy", "thunderstorm", "forestfire", "duststorm", "hailstorm", "flood"];
     string[] private timeOptions =
         ["morning", "afternoon", "evening", "night"];
 
