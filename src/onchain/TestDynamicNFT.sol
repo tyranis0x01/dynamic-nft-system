@@ -34,7 +34,7 @@ contract TestDynamicNFT is ERC721 {
     string[] private timeOptions = ["afternoon", "evening", "night", "midnight", "dawn"];
 
     constructor() ERC721("Simple Dynamic NFT", "SDYNFT") {
-        string memory info = "Test 5";
+        string memory info = "Test 9";
     }
 
     /**
