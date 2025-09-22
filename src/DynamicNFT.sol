@@ -169,6 +169,9 @@ contract DynamicNFT is ERC721, Ownable {
         return nftStates[tokenId];
     }
 
+    /**
+     * @dev Update oracles (only owner)
+     */
     function updateWeatherOracle(address _newOracle) external onlyOwner {
         weatherOracle = IDataOracle(_newOracle);
         emit OracleUpdated(_newOracle, "weather");
