@@ -30,11 +30,11 @@ contract TestDynamicNFT is ERC721 {
 
     // Predefined weather and time options for testing
     string[] private weatherOptions =
-        ["snowy", "foggy", "thunderstorm", "forestfire", "duststorm", "hailstorm", "flood", "hurricane"];
+        ["snowy", "foggy", "thunderstorm", "forestfire", "duststorm", "hailstorm"];
     string[] private timeOptions = ["afternoon", "evening", "night", "midnight", "dawn"];
 
     constructor() ERC721("Simple Dynamic NFT", "SDYNFT") {
-        string memory info = "Test 9";
+        string memory info = "Test 2";
     }
 
     /**
