@@ -12,6 +12,7 @@ contract TestDynamicNFT is ERC721 {
     using Strings for uint256;
 
     uint256 private _tokenIdCounter;
+    string private info = "Version 0.0.2";
 
     // Simplified NFT State
     struct NFTState {
@@ -29,13 +30,10 @@ contract TestDynamicNFT is ERC721 {
     event NFTUpdated(uint256 indexed tokenId, string updateType, string newValue);
 
     // Predefined weather and time options for testing
-    string[] private weatherOptions =
-        ["snowy", "foggy", "thunderstorm", "forestfire", "duststorm", "hailstorm"];
-    string[] private timeOptions = ["afternoon", "evening", "night", "midnight", "dawn"];
+    string[] private weatherOptions = ["sunny", "rainy", "cloudt", "snowy", "foggy"];
+    string[] private timeOptions = ["morning", "afternoon", "evening", "night"];
 
-    constructor() ERC721("Simple Dynamic NFT", "SDYNFT") {
-        string memory info = "Test 2";
-    }
+    constructor() ERC721("Simple Dynamic NFT", "SDYNFT") {}
 
     /**
      * @dev Mint a new NFT - anyone can mint for testing
