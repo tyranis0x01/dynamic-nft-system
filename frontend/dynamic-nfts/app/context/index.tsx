@@ -17,9 +17,9 @@ console.log("🌐 Networks:", [base, ...networks]);
 
 const metadata = {
     name: "Dynamic NFTs",
-    description: "A Dynamic NFT Minting Platform",
-    url: "", // Removed trailing slash
-    icons: ["/favicon.ico"],
+    description: "A Dynamic NFT Minting Platform.",
+    url: "https://dynamic-nft-system.vercel.app", // Removed trailing slash
+    icons: ["https://dynamic-nft-system.vercel.app/favicon.ico"],
 };
 
 console.log("📝 Metadata:", metadata);
