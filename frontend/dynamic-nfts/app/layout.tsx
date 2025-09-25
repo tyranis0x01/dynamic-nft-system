@@ -1,3 +1,5 @@
+// app/layout.tsx (or wherever your root layout is)
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
