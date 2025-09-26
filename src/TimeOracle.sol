@@ -8,4 +8,4 @@ import "./interfaces/IDataOracle.sol";
  * @title TimeOracle
  * @dev Oracle contract that provides time-based data for dynamic NFTs
  */
-contract TimeOracle {}
+contract TimeOracle is IDataOracle, Ownable {}
