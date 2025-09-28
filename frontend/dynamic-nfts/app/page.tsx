@@ -106,7 +106,7 @@ function AnalyticsStatus() {
     if (typeof window !== 'undefined') {
       const checks = {
         projectIdSet: !!(window as any).reownProjectId,
-        domainConfigured: window.location.hostname === 'educational-sandbox.vercel.app' ||
+        domainConfigured: window.location.hostname === 'dynamic-nft-system.vercel.app' ||
           window.location.hostname === 'localhost',
         appKitInstance: !!(window as any).appkit,
         analyticsEnabled: true // Assuming it's enabled in config
@@ -163,7 +163,7 @@ export default function Home() {
       </header>
 
       <h2 className="my-8 text-2xl font-bold leading-snug text-center">
-        Educational Sandbox with Analytics
+        Dynamic NFTs with Analytics
       </h2>
 
       <div className="max-w-4xl w-full space-y-4">

@@ -13,7 +13,7 @@ export default function SignMessage() {
     const handleSignMessage = async () => {
         if (!isConnected || !address) return;
 
-        const message = `Welcome to Academic Sandbox!
+        const message = `Welcome to Dynamic NFTs Platform!
 
 This signature creates your analytics session.
 
@@ -22,7 +22,7 @@ Chain ID: ${chainId}
 Timestamp: ${new Date().toISOString()}
 Domain: ${window.location.hostname}
 
-By signing this message, you agree to participate in our educational platform.`;
+By signing this message, you agree to participate in our Dynamic NFTs Platform.`;
 
         try {
             await signMessage({
