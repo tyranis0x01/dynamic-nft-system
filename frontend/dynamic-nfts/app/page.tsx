@@ -2,7 +2,7 @@
 'use client';
 import { useAccount, useDisconnect } from 'wagmi';
 import { useEffect, useState } from 'react';
-import SignMessage from '@/components/SignMessage';
+import SignMessage from '@/app/components/SignMessage';
 
 declare module 'react' {
   namespace JSX {
