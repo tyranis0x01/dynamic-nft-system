@@ -12,7 +12,7 @@ contract TestDynamicNFT is ERC721 {
     using Strings for uint256;
 
     uint256 private _tokenIdCounter;
-    string private info = "Version 0.0.4";
+    uint256 private _version = 2;
 
     // Simplified NFT State
     struct NFTState {
